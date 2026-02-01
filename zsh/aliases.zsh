@@ -10,8 +10,10 @@ alias code="trae --skip-welcome"
 
 # Aliases for DDEV
 alias ds="ddev start && ddev ssh"
+alias dr="ddev restart"
 alias dss="ddev ssh"
 alias ds!="ddev stop"
+alias dsp="ddev poweroff"
 
 # ZSH / OMZ Aliases
 alias config_zsh="code ~/.zshrc"
