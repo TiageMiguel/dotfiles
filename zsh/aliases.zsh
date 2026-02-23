@@ -6,7 +6,7 @@ alias cd="z"
 alias ..="cd .."
 alias ...="cd ../.."
 alias c="clear"
-alias code="trae --skip-welcome"
+alias code="antigravity"
 
 # Aliases for DDEV
 alias ds="ddev start && ddev ssh"

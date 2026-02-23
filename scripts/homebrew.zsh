@@ -1,17 +1,17 @@
 #!/bin/zsh
 
 if ! command -v brew &> /dev/null; then
-    echo "[Dotfiles (Tiage)] Homebrew not found. Installing Homebrew..."
+    echo "(.dotfiles) Homebrew not found. Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
-    echo "[Dotfiles (Tiage)] Homebrew is already installed. Updating..."
+    echo "(.dotfiles) Homebrew already installed. Updating..."
     brew update
 fi
 
-echo "[Dotfiles (Tiage)] Running brew bundle..."
-brew bundle --file=../Brewfile
+echo "(.dotfiles) Running brew bundle..."
+brew bundle --file=./Brewfile
 
-echo "[Dotfiles (Tiage)] Running brew cleanup..."
+echo "(.dotfiles) Running brew cleanup..."
 brew cleanup
 
-echo "[Dotfiles (Tiage)] Setup complete!"
+echo "(.dotfiles) Setup complete!"
