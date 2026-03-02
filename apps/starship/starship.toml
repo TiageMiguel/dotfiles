@@ -1,4 +1,4 @@
-# ~/.config/starship.toml
+# ~/.config/zsh/starship.toml
 
 format = """
 $directory$git_branch$git_status$cmd_duration$line_break$character
@@ -22,19 +22,20 @@ truncation_length = 16
 truncation_symbol = "…"
 
 [git_status]
+disabled = false  # Disabled by default for non-Git directories
 style = "red"
 conflicted = "⚔️ "
 ahead = "⇡${count}"
 behind = "⇣${count}"
 diverged = "⇕"
-modified = "✚"
-staged = "●"
-deleted = "✖"
-untracked = "…"
-stashed = "⚑"
-renamed = "➜"
+modified = "modified ${count}"
+staged = "staged ${count}"
+deleted = "deleted ${count}"
+untracked = "untracked ${count}"
+stashed = "stashed ${count}"
+renamed = "renamed ${count}"
 
 [cmd_duration]
-min_time = 2000  # Show only if > 2s
+min_time = 1000  # Show only if > 1s
 format = "took [$duration]($style)"
 style = "dimmed white"

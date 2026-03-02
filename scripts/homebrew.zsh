@@ -9,7 +9,7 @@ else
 fi
 
 echo "(.dotfiles) Running brew bundle..."
-brew bundle --file=./Brewfile
+brew bundle --file=./apps/Brewfile
 
 echo "(.dotfiles) Running brew cleanup..."
 brew cleanup
