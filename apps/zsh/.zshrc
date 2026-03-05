@@ -74,9 +74,12 @@ ZSH_CUSTOM="$XDG_CONFIG_HOME/zsh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git z)
 
+source <(fzf --zsh)
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/opt/fzf-tab/share/fzf-tab/fzf-tab.zsh
 source $ZSH/oh-my-zsh.sh
+
 
 # User configuration
 
@@ -109,3 +112,6 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+
+# Added by Antigravity
+export PATH="/Users/tiago/.antigravity/antigravity/bin:$PATH"
