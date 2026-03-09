@@ -44,3 +44,4 @@ palette = 15=#ffffff
 font-size = 14
 font-feature = liga, dlig
 font-family = FiraCode Nerd Font Mono
+auto-update = off

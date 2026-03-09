@@ -10,7 +10,7 @@ alias code="agy"
 
 # Aliases for DDEV
 alias ds="ddev start && ddev ssh"
-alias dr="ddev restart"
+alias dsr="ddev restart"
 alias dss="ddev ssh"
 alias ds!="ddev stop"
 alias dsp="ddev poweroff"
