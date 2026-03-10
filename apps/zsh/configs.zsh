@@ -2,7 +2,9 @@ HISTFILE=$ZSH_CUSTOM/.zhistory
 HISTSIZE=1000
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
+HIST_STAMPS="yyyy-mm-dd"
 
+setopt extended_history
 setopt append_history 
 setopt share_history 
 setopt hist_ignore_dups

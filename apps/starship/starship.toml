@@ -1,8 +1,8 @@
-# ~/.config/zsh/starship.toml
+# ~/.config/starship.toml
 
 format = """
-$directory$git_branch$git_status$cmd_duration$line_break$character
-"""
+$directory$git_branch$git_status$cmd_duration
+$line_break$character"""
 add_newline = true
 
 [directory]
@@ -10,34 +10,33 @@ style = "blue"
 truncation_length = 3
 truncation_symbol = "…/"
 read_only = " 󰌾"
+# fish_style_pwd_dir_length = 1 
 
 [character]
 success_symbol = "[\\$](bold green)"
 error_symbol = "[\\$](bold red)"
 
 [git_branch]
-format = "on [$symbol$branch(:$remote_branch)]($style)"
 symbol = " "
 style = "yellow"
-truncation_length = 16
-truncation_symbol = "…"
+format = "on [$symbol$branch(:$remote_branch)]($style) "
 
 [git_status]
 disabled = false
-format = ' ← [$all_status$ahead_behind]($style)'
+format = '([$all_status$ahead_behind]($style) )'
 style = "yellow"
-conflicted = "[conflict:${count} ](bold red)"
-ahead = "[⇡${count} ](green)"
-behind = "[⇣${count} ](red)"
-diverged = "[⇡${ahead_count} ⇣${behind_count} ](red)"
-modified = "[mod:${count} ](yellow)"
-staged = "[staged:${count} ](green)"
-deleted = "[del:${count} ](red)"
-untracked = "[new:${count} ](cyan)"
-stashed = "[stash:${count} ](dimmed white)"
-renamed = "[ren:${count} ](blue)"
+conflicted = "󰞇 ${count} "
+ahead = "⇡${count} "
+behind = "⇣${count} "
+diverged = "⇡${ahead_count} ⇣${behind_count} "
+modified = "mod:${count} "
+staged = "staged:${count} "
+deleted = "del:${count} "
+untracked = "new:${count} "
+stashed = "stash:${count} "
+renamed = "ren:${count} "
 
 [cmd_duration]
-min_time = 1000  # Show only if > 1s
+min_time = 1000
 format = "took [$duration]($style)"
 style = "dimmed white"

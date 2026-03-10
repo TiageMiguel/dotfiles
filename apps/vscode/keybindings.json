@@ -1,0 +1,13 @@
+// Place your key bindings in this file to override the defaults
+
+[
+  {
+    "key": "shift+cmd+r",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "terminalFocus"
+  }
+]
