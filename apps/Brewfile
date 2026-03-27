@@ -17,6 +17,8 @@ brew "htop"
 brew "btop"
 brew "fzf"
 brew "fzf-tab"
+brew "zsh-syntax-highlighting"
+brew "zsh-autosuggestions"
 
 # cask "iterm2"
 cask "ghostty"
