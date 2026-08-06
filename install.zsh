@@ -6,5 +6,8 @@ find ./scripts -type f \( -name "*.zsh" -o -name "*.sh" \) -exec chmod +x {} \;
 echo "(.dotfiles) Running homebrew script..."
 zsh ./scripts/homebrew.zsh
 
+echo "(.dotfiles) Linking configs..."
+zsh ./scripts/link.zsh
+
 # Install oh-my-zsh
 # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

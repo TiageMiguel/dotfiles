@@ -12,47 +12,38 @@ This repository contains the configuration files, installation scripts, and appl
   - `Brewfile` - Homebrew bundle manifest for packages, casks, and fonts.
   - `zsh/` - Zsh configuration files (`.zshrc`, aliases, completions, exports, plugins).
   - `starship/` - Starship prompt configuration (`starship.toml`).
-  - Terminal & Editor Configs - `ghostty`, `iterm`, `zed`, `vscode`.
+  - Terminal & Editor Configs - `ghostty`, `iterm`, `zed`, `cursor` (also linked into VS Code).
   - Tools - `rectangle` window manager configuration.
-- `scripts/` - Individual script files (e.g., `homebrew.zsh` for setting up brew and running the bundle).
+- `scripts/` - Individual script files (e.g., `homebrew.zsh` for setting up brew and running the bundle, `link.zsh` for symlinking configs).
 - `install.zsh` - The main executable script to bootstrap the system.
 
 ## Installation
 
 ### 1. Bootstrap Setup
-Run the main install script. This will make all scripts executable and run the Homebrew setup (installing brew if missing, updating, and installing packages from the `Brewfile`).
+Run the main install script. This will make all scripts executable, run the Homebrew setup (installing brew if missing, updating, and installing packages from the `Brewfile`), and symlink application configs to their runtime paths.
 
 ```bash
 zsh ./install.zsh
 ```
 
-### 2. Manual Configuration Linkage
+### 2. Link configs only
 
-After the bootstrap script installs the required packages, you need to link the application configurations to their target directories.
+To (re)link configs without running Homebrew:
 
-Copy or symlink the files to your home and config directories:
-
-**Zsh & Starship Setup:**
 ```bash
-# Zsh root configuration
-cp apps/zsh/.zshrc ~/.zshrc
-
-# Zsh component files
-mkdir -p ~/.config/zsh
-rsync -a --exclude='.zshrc' apps/zsh/ ~/.config/zsh/
-
-# Starship prompt configuration
-cp apps/starship/starship.toml ~/.config/zsh/starship.toml
+zsh ./scripts/link.zsh
 ```
 
-**Application Configs Setup:**
-```bash
-# Copy terminal, editor, and tools settings
-cp -R apps/ghostty ~/.config/ghostty
-cp -R apps/rectangle ~/.config/
-cp -R apps/zed ~/.config/
-cp -R apps/iterm ~/.config/
-cp -R apps/vscode ~/.config/
-```
+Existing files at a destination are moved to `*.bak.<timestamp>` before linking. Already-correct symlinks are left alone.
 
-> **Note:** For easier future maintenance, consider using `ln -s` (symbolic links) instead of `cp` so that changes made in `~/.config/` are automatically reflected in this repository.
+| Repo path | Destination |
+|-----------|-------------|
+| `apps/ghostty/` | `~/.config/ghostty` |
+| `apps/zsh/.zshrc` | `~/.zshrc` |
+| `apps/zsh/*.zsh` | `~/.config/zsh/*.zsh` |
+| `apps/starship/starship.toml` | `~/.config/zsh/starship.toml` |
+| `apps/cursor/settings.json` | `~/Library/Application Support/Cursor/User/settings.json` |
+| `apps/cursor/settings.json` | `~/Library/Application Support/Code/User/settings.json` |
+| `apps/rectangle/RectangleConfig.json` | `~/Library/Application Support/Rectangle/RectangleConfig.json` |
+| `apps/iterm/tiago.json` | `~/Library/Application Support/iTerm2/DynamicProfiles/tiago.json` |
+| `apps/themes/custom-theme.json` | `~/.config/zed/themes/custom-theme.json` |

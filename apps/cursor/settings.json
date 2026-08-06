@@ -1,0 +1,118 @@
+{
+  // --- Editor: Font and Appearance ---
+  "editor.fontFamily": "FiraCode Nerd Font Mono",
+  "editor.fontSize": 14,
+  "editor.tabSize": 2,
+  "editor.fontLigatures": true,
+  "editor.fontVariations": false,
+  "editor.fontWeight": "300",
+  "editor.mouseWheelZoom": false,
+  "editor.inlineSuggest.fontFamily": "FiraCode Nerd Font Mono",
+  "editor.codeLensFontFamily": "FiraCode Nerd Font Mono",
+  "editor.inlayHints.fontSize": 12,
+  "editor.stickyScroll.enabled": false,
+  "editor.minimap.enabled": false,
+  "editor.experimentalWhitespaceRendering": "font",
+  "editor.accessibilitySupport": "off",
+  "editor.experimental.preferTreeSitter.css": true,
+  "editor.experimental.preferTreeSitter.ini": true,
+  "editor.experimental.preferTreeSitter.typescript": true,
+
+  // --- Editor: Misc ---
+  "diffEditor.ignoreTrimWhitespace": false,
+  // "editor.rulers": [80, 100, 130],
+
+  // --- Theme and Layout ---
+  "workbench.colorTheme": "Default Dark+",
+  "workbench.preferredLightColorTheme": "Default Dark Modern",
+  "workbench.sideBar.location": "right",
+  "workbench.layoutControl.enabled": false,
+  "workbench.editor.pinnedTabsOnSeparateRow": true,
+  "workbench.tree.enableStickyScroll": false,
+
+  // --- Window and Environment ---
+  "window.autoDetectColorScheme": true,
+
+  // --- Explorer ---
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmPasteNative": false,
+
+  // --- Breadcrumbs ---
+  "breadcrumbs.enabled": false,
+
+  // --- Git / Source Control ---
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "git.blame.editorDecoration.enabled": true,
+
+  // --- Extensions and Recommendations ---
+  "extensions.ignoreRecommendations": true,
+
+  // --- Update ---
+  "update.releaseTrack": "stable",
+
+  // --- Terminal ---
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorStyleInactive": "underline",
+  "terminal.integrated.fontLigatures.featureSettings": "\"calt\" on, \"liga\" on",
+  "terminal.integrated.tabs.location": "left",
+  "terminal.integrated.tabs.enabled": false,
+  "terminal.integrated.stickyScroll.enabled": false,
+
+  // --- Debug Console ---
+  "debug.console.fontSize": 14,
+  "debug.console.fontFamily": "FiraCode Nerd Font Mono",
+
+  // --- SCM ---
+  "scm.inputFontSize": 12,
+
+  // --- Notebook ---
+  "notebook.markup.fontFamily": "FiraCode Nerd Font Mono",
+
+  // --- Miscellaneous ---
+  "ddevManager.showProjectsList": "All Projects",
+  "ddevManager.defaultDatabaseManager": "phpMyAdmin",
+  "bootstrapIntelliSense": {
+    "enable": true,
+    "bsVersion": "5.3.7",
+    "useLocalFile": true,
+    "cssFilePath": "",
+    "languageSupport": ["html", "php", "twig"]
+  },
+
+  // --- Files Association ---
+  "files.associations": {
+    "*.module": "php",
+    "*.ts": "typescriptreact"
+  },
+
+  // --- Language Specific Formatting ---
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[twig]": {
+    "editor.defaultFormatter": "mblode.twig-language-2"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "security.promptForLocalFileProtocolHandling": false
+}
