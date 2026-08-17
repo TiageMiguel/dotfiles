@@ -1,0 +1,82 @@
+# Cursor Light — Vicinae port of Cursor's built-in light theme
+# https://docs.vicinae.com/theming/getting-started
+
+[meta]
+version = 1
+name = "Cursor Light"
+description = "Cursor Light for Vicinae"
+variant = "light"
+inherits = "vicinae-light"
+
+[colors.core]
+background = "#F3F3F3"
+foreground = "#141414"
+secondary_background = "#FCFCFC"
+border = "#E1E1E1"
+accent = "#2778C1"
+accent_foreground = "#FCFCFC"
+
+[colors.main_window]
+border = "colors.core.border"
+footer = { background = "colors.core.secondary_background" }
+
+[colors.settings_window]
+border = "colors.core.border"
+
+[colors.accents]
+blue = "#0064B0"
+green = "#007041"
+magenta = "#92156A"
+orange = "#CD4500"
+red = "#BE1744"
+yellow = "#A46700"
+cyan = "#176C74"
+purple = "#7565CC"
+
+[colors.shortcut]
+border = "colors.core.border"
+
+[colors.text]
+default = "colors.core.foreground"
+muted = "#4E4E4E"
+danger = "#BE1744"
+success = "#007041"
+placeholder = "#A3A3A3"
+selection = { background = "#D6D6D6", foreground = "#141414" }
+
+[colors.text.links]
+default = "#0064B0"
+visited = "#7565CC"
+
+[colors.input]
+border = "#D4D4D4"
+border_focus = "colors.core.accent"
+border_error = "#BE1744"
+
+[colors.button.primary]
+background = "#2778C1"
+foreground = "#FCFCFC"
+hover = { background = "#246AAB" }
+focus = { outline = "colors.core.accent" }
+
+[colors.list.item.hover]
+foreground = "#141414"
+secondary_foreground = "#141414"
+
+[colors.list.item.selection]
+background = "#EAEAEA"
+foreground = "#141414"
+secondary_background = "#E1E1E1"
+secondary_foreground = "#141414"
+
+[colors.grid.item]
+background = "#FCFCFC"
+hover = { outline = "#141414" }
+selection = { outline = "#2778C1" }
+
+[colors.scrollbars]
+background = "#D4D4D4"
+
+[colors.loading]
+bar = "#007041"
+spinner = "#141414"

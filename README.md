@@ -12,29 +12,30 @@ This repository contains the configuration files, installation scripts, and appl
   - `Brewfile` - Homebrew bundle manifest for packages, casks, and fonts.
   - `zsh/` - Zsh configuration files (`.zshrc`, aliases, completions, exports, plugins).
   - `starship/` - Starship prompt configuration (`starship.toml`).
-  - Terminal & Editor Configs - `ghostty`, `iterm`, `zed`, `cursor` (also linked into VS Code).
+  - Terminal & Editor Configs - `ghostty`, `iterm`, `zed`, `cursor` (also copied into VS Code).
+  - `vicinae/` - Vicinae launcher themes (Cursor Dark / Light).
   - Tools - `rectangle` window manager configuration.
-- `scripts/` - Individual script files (e.g., `homebrew.zsh` for setting up brew and running the bundle, `link.zsh` for symlinking configs).
+- `scripts/` - Individual script files (e.g., `homebrew.zsh` for setting up brew and running the bundle, `link.zsh` for copying configs into place).
 - `install.zsh` - The main executable script to bootstrap the system.
 
 ## Installation
 
 ### 1. Bootstrap Setup
-Run the main install script. This will make all scripts executable, run the Homebrew setup (installing brew if missing, updating, and installing packages from the `Brewfile`), and symlink application configs to their runtime paths.
+Run the main install script. This will make all scripts executable, run the Homebrew setup (installing brew if missing, updating, and installing packages from the `Brewfile`), and copy application configs to their runtime paths.
 
 ```bash
 zsh ./install.zsh
 ```
 
-### 2. Link configs only
+### 2. Copy configs only
 
-To (re)link configs without running Homebrew:
+To (re)copy configs without running Homebrew:
 
 ```bash
 zsh ./scripts/link.zsh
 ```
 
-Existing files at a destination are moved to `*.bak.<timestamp>` before linking. Already-correct symlinks are left alone.
+Existing files at a destination are moved to `*.bak.<timestamp>` before copying. Identical files/dirs are left alone. Old symlinks from previous installs are replaced with real copies.
 
 | Repo path | Destination |
 |-----------|-------------|
@@ -47,3 +48,6 @@ Existing files at a destination are moved to `*.bak.<timestamp>` before linking.
 | `apps/rectangle/RectangleConfig.json` | `~/Library/Application Support/Rectangle/RectangleConfig.json` |
 | `apps/iterm/tiago.json` | `~/Library/Application Support/iTerm2/DynamicProfiles/tiago.json` |
 | `apps/themes/custom-theme.json` | `~/.config/zed/themes/custom-theme.json` |
+| `apps/vicinae/themes/cursor/*.toml` | `~/.local/share/vicinae/themes/*.toml` |
+
+Configs are **copied**, not symlinked. Edit files in this repo, then re-run `link.zsh` to push changes out. Rectangle also requires a real file: on launch it imports `RectangleConfig.json` into its defaults, then renames it.

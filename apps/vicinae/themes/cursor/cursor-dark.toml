@@ -1,0 +1,82 @@
+# Cursor Dark — Vicinae port of Cursor's built-in Anysphere dark theme
+# https://docs.vicinae.com/theming/getting-started
+
+[meta]
+version = 1
+name = "Cursor Dark"
+description = "Cursor Dark (Anysphere) for Vicinae"
+variant = "dark"
+inherits = "vicinae-dark"
+
+[colors.core]
+background = "#141414"
+foreground = "#F0F0F0"
+secondary_background = "#181818"
+border = "#2A2A2A"
+accent = "#88C0D0"
+accent_foreground = "#141414"
+
+[colors.main_window]
+border = "colors.core.border"
+footer = { background = "colors.core.secondary_background" }
+
+[colors.settings_window]
+border = "colors.core.border"
+
+[colors.accents]
+blue = "#81A1C1"
+green = "#3FA266"
+magenta = "#B48EAD"
+orange = "#D2943E"
+red = "#FC6B83"
+yellow = "#F1B467"
+cyan = "#88C0D0"
+purple = "#AAA0FA"
+
+[colors.shortcut]
+border = "colors.core.border"
+
+[colors.text]
+default = "colors.core.foreground"
+muted = "#B3B3B3"
+danger = "#E34671"
+success = "#3FA266"
+placeholder = "#919191"
+selection = { background = "#404040", foreground = "#F0F0F0" }
+
+[colors.text.links]
+default = "#81A1C1"
+visited = "#AAA0FA"
+
+[colors.input]
+border = "colors.core.border"
+border_focus = "colors.core.accent"
+border_error = "#E34671"
+
+[colors.button.primary]
+background = "#81A1C1"
+foreground = "#191C22"
+hover = { background = "#87A6C4" }
+focus = { outline = "colors.core.accent" }
+
+[colors.list.item.hover]
+foreground = "#F0F0F0"
+secondary_foreground = "#F0F0F0"
+
+[colors.list.item.selection]
+background = "#343434"
+foreground = "#F0F0F0"
+secondary_background = "#262626"
+secondary_foreground = "#F0F0F0"
+
+[colors.grid.item]
+background = "#181818"
+hover = { outline = "#F0F0F0" }
+selection = { outline = "#88C0D0" }
+
+[colors.scrollbars]
+background = "#2A2A2A"
+
+[colors.loading]
+bar = "#3FA266"
+spinner = "#F0F0F0"
