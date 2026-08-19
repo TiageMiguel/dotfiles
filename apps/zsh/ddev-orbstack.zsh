@@ -1,6 +1,7 @@
 # ddev validates the Docker connection before anything else and aborts when the
 # daemon is down, so there is no pre-start hook left to attach to. This wrapper
-# brings OrbStack up first, then hands the command over.
+# brings OrbStack up first, then hands the command over -- and takes it back
+# down after a poweroff, which is the one ddev command that releases everything.
 
 _ddev_sock="$HOME/.orbstack/run/docker.sock"
 
@@ -18,6 +19,12 @@ ddev() {
   if ! command -v orbctl >/dev/null 2>&1; then
     command ddev "$@"
     return
+  fi
+
+  # Powering off a daemon that is already down: nothing to start, nothing to do.
+  if [[ "$1" == poweroff && ! -S "$_ddev_sock" ]]; then
+    print -u2 -P "%F{green}==>%f OrbStack is already stopped."
+    return 0
   fi
 
   # Fast path: the socket only exists while OrbStack runs, and testing it is free.
@@ -40,4 +47,28 @@ ddev() {
   fi
 
   command ddev "$@"
+  local ret=$?
+
+  # poweroff stops every ddev container, so the daemon has nothing left to do --
+  # unless something outside ddev is still using it, which is not ours to kill.
+  if [[ "$1" == poweroff && $ret -eq 0 ]]; then
+    local others
+    others=$(docker ps -q 2>/dev/null | grep -c .)
+    if [[ "$others" -eq 0 ]]; then
+      print -u2 -P "%F{yellow}==>%f Stopping OrbStack..."
+      if orbctl stop >/dev/null 2>&1; then
+        # orbctl stop only takes the engine down; the UI process lingers at
+        # ~130MB. Quitting the app too is safe -- orbctl start wakes it from
+        # a fully closed state.
+        osascript -e 'quit app "OrbStack"' >/dev/null 2>&1
+        print -u2 -P "%F{green}==>%f OrbStack stopped."
+      else
+        print -u2 -P "%F{red}==>%f Could not stop OrbStack."
+      fi
+    else
+      print -u2 -P "%F{yellow}==>%f OrbStack left running: ${others} non-ddev container(s) still up."
+    fi
+  fi
+
+  return $ret
 }
