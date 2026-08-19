@@ -10,7 +10,7 @@ This repository contains the configuration files, installation scripts, and appl
 
 - `apps/`
   - `Brewfile` - Homebrew bundle manifest for packages, casks, and fonts.
-  - `zsh/` - Zsh configuration files (`.zshrc`, aliases, completions, exports, plugins).
+  - `zsh/` - Zsh configuration files (`.zshrc`, aliases, completions, exports, plugins, and a `ddev` wrapper that starts OrbStack on demand).
   - `starship/` - Starship prompt configuration (`starship.toml`).
   - Terminal & Editor Configs - `ghostty`, `iterm`, `zed`, `cursor` (also copied into VS Code).
   - `vicinae/` - Vicinae launcher themes (Cursor Dark / Light).
