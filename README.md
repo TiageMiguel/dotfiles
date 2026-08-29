@@ -13,7 +13,7 @@ This repository contains the configuration files, installation scripts, and appl
   - `zsh/` - Zsh configuration files (`.zshrc`, aliases, completions, exports, plugins, and a `ddev` wrapper that starts OrbStack on demand).
   - `starship/` - Starship prompt configuration (`starship.toml`).
   - Terminal & Editor Configs - `ghostty`, `iterm`, `zed`, `cursor` (also copied into VS Code).
-  - `vicinae/` - Vicinae launcher themes (`tiage-dark` / `tiage-light`).
+  - `vicinae/` - Vicinae settings and launcher themes (`tiage-dark` / `tiage-light`).
   - `btop/` - btop tiage light/dark themes (auto-picked from system appearance).
   - Tools - `rectangle` window manager configuration.
 - `scripts/` - Individual script files (e.g., `homebrew.zsh` for setting up brew and running the bundle, `link.zsh` for copying configs into place).
@@ -49,6 +49,7 @@ Existing files at a destination are moved to `*.bak.<timestamp>` before copying.
 | `apps/rectangle/RectangleConfig.json` | `~/Library/Application Support/Rectangle/RectangleConfig.json` |
 | `apps/iterm/tiago.json` | `~/Library/Application Support/iTerm2/DynamicProfiles/tiago.json` |
 | `apps/themes/custom-theme.json` | `~/.config/zed/themes/custom-theme.json` |
+| `apps/vicinae/settings.json` | `~/.config/vicinae/settings.json` |
 | `apps/vicinae/themes/*.toml` | `~/.local/share/vicinae/themes/*.toml` |
 | `apps/btop/themes/*.theme` | `~/.config/btop/themes/*.theme` |
 

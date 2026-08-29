@@ -1,0 +1,126 @@
+// This configuration is merged with the default vicinae configuration file, which you can obtain by running the `vicinae config default` command.
+// Every item defined in this file takes precedence over the values defined in the default config or any other imported file.
+//
+// You can make manual edits to this file, however you should keep in mind that this file may be written to by vicinae when a configuration change is made through the GUI.
+// When that happens, any custom comments or formatting will be lost.
+//
+// If you want to maintain a configuration file with your own comments and formatting, you should create a separate file and add it to the 'imports' array.
+//
+// Learn more about configuration at https://docs.vicinae.com/config
+
+{
+   "$schema": "https://vicinae.com/schemas/config.json",
+   "close_on_focus_loss": false,
+   "pop_to_root_on_close": true,
+   "wrap_navigation": true,
+   "favicon_service": "none",
+   "language": "system",
+   "global_shortcuts": {
+      "toggle": "control+SPACE"
+   },
+   "font": {
+      "rendering": "native",
+      "normal": {
+         "family": ".AppleSystemUIFont",
+         "size": 13
+      }
+   },
+   "theme": {
+      "light": {
+         "name": "tiage-light"
+      },
+      "dark": {
+         "name": "tiage-dark"
+      }
+   },
+   "launcher_window": {
+      "rounding": 24,
+      "opacity": 0.1,
+      "compact_mode": {
+         "enabled": false
+      },
+      "floating_status_bar": true,
+      "material": "liquid_glass"
+   },
+   "favorites": [
+      "applications:com.mitchellh.ghostty",
+      "@tiagem/workspace:workspace",
+      "@tiagemiguel/workspace:workspace",
+      "applications:company.thebrowser.dia",
+      "applications:com.bitwarden",
+      "applications:com.apple.Notes",
+      "applications:com.apple.mail"
+   ],
+   "providers": {
+      "@Tiago/teste": {
+         "enabled": false
+      },
+      "@tiagem/workspace": {
+         "preferences": {
+            "defaultApp": "",
+            "recentProjectsCount": "5",
+            "showGitStatus": true,
+            "showRecentProjects": false,
+            "useFzf": true,
+            "terminalApp": ""
+         }
+      },
+      "@tiagemiguel/coffee": {
+         "preferences": {
+            "prevent-disk": true,
+            "prevent-display": true,
+            "prevent-lid": false,
+            "prevent-system": true,
+            "show-menu-bar": true
+         }
+      },
+      "@tumtum/store.raycast.apple-notes": {
+         "preferences": {
+            "accounts": true,
+            "backlinks": true,
+            "checklist": true,
+            "folders": true,
+            "links": true,
+            "locked": true,
+            "maxQueryResults": "250",
+            "modificationDate": true,
+            "openSeparately": false,
+            "shared": true,
+            "tags": true
+         }
+      },
+      "browser-extension": {
+         "enabled": false
+      },
+      "calculator": {
+         "preferences": {
+            "backend": "numen",
+            "refreshRatesOnStartup": true
+         }
+      },
+      "clipboard": {
+         "preferences": {
+            "monitoring": true
+         }
+      },
+      "core": {
+         "entrypoints": {
+            "forget-telemetry": {
+               "enabled": true
+            },
+            "inspect-local-storage": {
+               "enabled": true
+            },
+            "oauth-token-store": {
+               "enabled": true
+            },
+            "search-builtin-icons": {
+               "enabled": true
+            }
+         }
+      },
+      "raycast-compat": {
+         "enabled": false
+      }
+   }
+}

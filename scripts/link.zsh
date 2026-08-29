@@ -69,7 +69,8 @@ copy_path "$ROOT_DIR/apps/iterm/tiago.json" "$HOME/Library/Application Support/i
 # Zed theme
 copy_path "$ROOT_DIR/apps/themes/custom-theme.json" "$HOME/.config/zed/themes/custom-theme.json"
 
-# Vicinae themes — dest must stay flat; Vicinae does not search subdirectories
+# Vicinae settings + themes (themes dest must stay flat)
+copy_path "$ROOT_DIR/apps/vicinae/settings.json" "$HOME/.config/vicinae/settings.json"
 for file in "$ROOT_DIR"/apps/vicinae/themes/*.toml(N); do
   copy_path "$file" "$HOME/.local/share/vicinae/themes/${file:t}"
 done
