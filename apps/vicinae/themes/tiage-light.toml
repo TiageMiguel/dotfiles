@@ -1,10 +1,7 @@
-# Cursor Light — Vicinae port of Cursor's built-in light theme
-# https://docs.vicinae.com/theming/getting-started
-
 [meta]
 version = 1
-name = "Cursor Light"
-description = "Cursor Light for Vicinae"
+name = "Tiage Light"
+description = "Tiage light theme for Vicinae"
 variant = "light"
 inherits = "vicinae-light"
 

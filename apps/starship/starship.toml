@@ -39,4 +39,4 @@ renamed = "ren:${count} "
 [cmd_duration]
 min_time = 1000
 format = "took [$duration]($style)"
-style = "dimmed white"
+style = "bright-black"

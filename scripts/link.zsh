@@ -70,8 +70,13 @@ copy_path "$ROOT_DIR/apps/iterm/tiago.json" "$HOME/Library/Application Support/i
 copy_path "$ROOT_DIR/apps/themes/custom-theme.json" "$HOME/.config/zed/themes/custom-theme.json"
 
 # Vicinae themes — dest must stay flat; Vicinae does not search subdirectories
-for file in "$ROOT_DIR"/apps/vicinae/themes/cursor/*.toml(N); do
+for file in "$ROOT_DIR"/apps/vicinae/themes/*.toml(N); do
   copy_path "$file" "$HOME/.local/share/vicinae/themes/${file:t}"
+done
+
+# btop themes (wrapper in aliases.zsh picks light/dark from system)
+for file in "$ROOT_DIR"/apps/btop/themes/*.theme(N); do
+  copy_path "$file" "$HOME/.config/btop/themes/${file:t}"
 done
 
 echo "(.dotfiles) Copying complete!"

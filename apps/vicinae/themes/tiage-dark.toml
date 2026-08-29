@@ -1,10 +1,7 @@
-# Cursor Dark — Vicinae port of Cursor's built-in Anysphere dark theme
-# https://docs.vicinae.com/theming/getting-started
-
 [meta]
 version = 1
-name = "Cursor Dark"
-description = "Cursor Dark (Anysphere) for Vicinae"
+name = "Tiage Dark"
+description = "Tiage dark theme for Vicinae"
 variant = "dark"
 inherits = "vicinae-dark"
 

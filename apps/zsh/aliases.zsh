@@ -6,6 +6,21 @@ alias vim="nvim"
 alias c="clear"
 alias code="$EDITOR"
 
+btop() {
+  local theme="tiage-dark"
+  if [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" != "Dark" ]]; then
+    theme="tiage-light"
+  fi
+  local conf="${XDG_CONFIG_HOME:-$HOME/.config}/btop/btop.conf"
+  if [[ -f "$conf" ]]; then
+    sed -i '' \
+      -e "s/^color_theme = .*/color_theme = \"${theme}\"/" \
+      -e 's/^theme_background = .*/theme_background = false/' \
+      "$conf"
+  fi
+  command btop "$@"
+}
+
 # Aliases for DDEV
 alias ds="ddev start && ddev ssh"
 alias dsr="ddev restart"
